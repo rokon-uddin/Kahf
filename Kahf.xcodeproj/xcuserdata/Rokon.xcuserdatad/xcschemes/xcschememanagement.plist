@@ -7,7 +7,30 @@
 		<key>Kahf.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>ProxyProviderExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2F0B90512CB81DBF008455D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F3E34BF2CB6F2BB00956CC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FDB20E62CB6B30E00FB2AFC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

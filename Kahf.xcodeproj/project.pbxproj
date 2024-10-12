@@ -6,11 +6,68 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2F0B90532CB81DBF008455D1 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3E34C22CB6F2BB00956CC1 /* NetworkExtension.framework */; };
+		2F0B905B2CB81DBF008455D1 /* ProxyProviderExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2F0B90522CB81DBF008455D1 /* ProxyProviderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F0B90592CB81DBF008455D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FDB20DF2CB6B30E00FB2AFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F0B90512CB81DBF008455D1;
+			remoteInfo = ProxyProviderExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F3E34D02CB6F2BB00956CC1 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2F0B905B2CB81DBF008455D1 /* ProxyProviderExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2F0B90522CB81DBF008455D1 /* ProxyProviderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ProxyProviderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F3E34C22CB6F2BB00956CC1 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		2FDB20E72CB6B30E00FB2AFC /* Kahf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kahf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2F0B905C2CB81DBF008455D1 /* Exceptions for "ProxyProviderExtension" folder in "ProxyProviderExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2F0B90512CB81DBF008455D1 /* ProxyProviderExtension */;
+		};
+		2F6EEC5D2CBA4F5100625C2C /* Exceptions for "ProxyProviderExtension" folder in "Kahf" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Logger/ProxyLogger.swift,
+			);
+			target = 2FDB20E62CB6B30E00FB2AFC /* Kahf */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		2F0B90542CB81DBF008455D1 /* ProxyProviderExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2F6EEC5D2CBA4F5100625C2C /* Exceptions for "ProxyProviderExtension" folder in "Kahf" target */,
+				2F0B905C2CB81DBF008455D1 /* Exceptions for "ProxyProviderExtension" folder in "ProxyProviderExtension" target */,
+			);
+			path = ProxyProviderExtension;
+			sourceTree = "<group>";
+		};
 		2FDB20E92CB6B30E00FB2AFC /* Kahf */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Kahf;
@@ -19,6 +76,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F0B904F2CB81DBF008455D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0B90532CB81DBF008455D1 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FDB20E42CB6B30E00FB2AFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,10 +94,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F3E34C12CB6F2BB00956CC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F3E34C22CB6F2BB00956CC1 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2FDB20DE2CB6B30E00FB2AFC = {
 			isa = PBXGroup;
 			children = (
 				2FDB20E92CB6B30E00FB2AFC /* Kahf */,
+				2F0B90542CB81DBF008455D1 /* ProxyProviderExtension */,
+				2F3E34C12CB6F2BB00956CC1 /* Frameworks */,
 				2FDB20E82CB6B30E00FB2AFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				2FDB20E72CB6B30E00FB2AFC /* Kahf.app */,
+				2F0B90522CB81DBF008455D1 /* ProxyProviderExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +124,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F0B90512CB81DBF008455D1 /* ProxyProviderExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F0B905D2CB81DBF008455D1 /* Build configuration list for PBXNativeTarget "ProxyProviderExtension" */;
+			buildPhases = (
+				2F0B904E2CB81DBF008455D1 /* Sources */,
+				2F0B904F2CB81DBF008455D1 /* Frameworks */,
+				2F0B90502CB81DBF008455D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2F0B90542CB81DBF008455D1 /* ProxyProviderExtension */,
+			);
+			name = ProxyProviderExtension;
+			packageProductDependencies = (
+			);
+			productName = ProxyProviderExtension;
+			productReference = 2F0B90522CB81DBF008455D1 /* ProxyProviderExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2FDB20E62CB6B30E00FB2AFC /* Kahf */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FDB20F52CB6B30F00FB2AFC /* Build configuration list for PBXNativeTarget "Kahf" */;
@@ -55,10 +153,12 @@
 				2FDB20E32CB6B30E00FB2AFC /* Sources */,
 				2FDB20E42CB6B30E00FB2AFC /* Frameworks */,
 				2FDB20E52CB6B30E00FB2AFC /* Resources */,
+				2F3E34D02CB6F2BB00956CC1 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2F0B905A2CB81DBF008455D1 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				2FDB20E92CB6B30E00FB2AFC /* Kahf */,
@@ -80,6 +180,9 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					2F0B90512CB81DBF008455D1 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					2FDB20E62CB6B30E00FB2AFC = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -100,11 +203,19 @@
 			projectRoot = "";
 			targets = (
 				2FDB20E62CB6B30E00FB2AFC /* Kahf */,
+				2F0B90512CB81DBF008455D1 /* ProxyProviderExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F0B90502CB81DBF008455D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FDB20E52CB6B30E00FB2AFC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +226,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F0B904E2CB81DBF008455D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FDB20E32CB6B30E00FB2AFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +242,69 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2F0B905A2CB81DBF008455D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F0B90512CB81DBF008455D1 /* ProxyProviderExtension */;
+			targetProxy = 2F0B90592CB81DBF008455D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2F0B905E2CB81DBF008455D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ProxyProviderExtension/ProxyProviderExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F99HM3QXD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProxyProviderExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ProxyProviderExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.Kahf.ProxyProviderExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F0B905F2CB81DBF008455D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ProxyProviderExtension/ProxyProviderExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F99HM3QXD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProxyProviderExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ProxyProviderExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.Kahf.ProxyProviderExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2FDB20F32CB6B30F00FB2AFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -249,9 +429,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Kahf/Kahf.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kahf/Preview Content\"";
+				DEVELOPMENT_TEAM = 3F99HM3QXD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -259,12 +441,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rokonuddin.Kahf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.Kahf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -277,9 +460,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Kahf/Kahf.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kahf/Preview Content\"";
+				DEVELOPMENT_TEAM = 3F99HM3QXD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -287,12 +472,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rokonuddin.Kahf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mlbd.Kahf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -303,6 +489,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F0B905D2CB81DBF008455D1 /* Build configuration list for PBXNativeTarget "ProxyProviderExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F0B905E2CB81DBF008455D1 /* Debug */,
+				2F0B905F2CB81DBF008455D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2FDB20E22CB6B30E00FB2AFC /* Build configuration list for PBXProject "Kahf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
