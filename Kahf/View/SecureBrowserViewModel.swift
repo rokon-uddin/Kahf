@@ -16,7 +16,7 @@ final class SecureBrowserViewModel {
   var canGoBack = false
   var canGoForward = false
   var webView: WKWebView
-  var urlString = "https://www.apple.com"
+  var urlString = Constants.defaultURL
   @ObservationIgnored private var proxyManager = ProxyManager()
 
   init() {
