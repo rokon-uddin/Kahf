@@ -45,6 +45,9 @@ struct SecureBrowserView: View {
     }
     .focused($isFocused)
     .submitLabel(.go)
+    .textContentType(.URL)
+    .disableAutocorrection(true)
+    .autocapitalization(.none)
     .padding(.all, 10)
     .background(Color(.systemGray6))
     .cornerRadius(8)
@@ -83,7 +86,7 @@ struct SecureBrowserView: View {
 
       Toggle("VPN", isOn: $viewModel.isVPNOn)
         .frame(width: 92)
-        .onChange(of: viewModel.isVPNOn){ _, _ in
+        .onChange(of: viewModel.isVPNOn) { _, _ in
           togglePrivacy()
         }
     }
