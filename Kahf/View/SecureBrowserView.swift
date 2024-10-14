@@ -9,11 +9,11 @@ import SwiftUI
 
 struct SecureBrowserView: View {
   @FocusState private var isFocused: Bool
-  @State private var viewModel = SecureBrowserViewModel()
+  @StateObject private var viewModel = SecureBrowserViewModel()
 
   var body: some View {
     VStack(spacing: 0) {
-      SwiftUIWebView(viewModel: $viewModel)
+      SwiftUIWebView(viewModel: viewModel)
         .edgesIgnoringSafeArea(.bottom)
         .onAppear {
           viewModel.loadUrl()
@@ -40,6 +40,9 @@ struct SecureBrowserView: View {
       "Enter URL or search",
       text: $viewModel.urlString
     )
+    .onAppear {
+      UITextField.appearance().clearButtonMode = .whileEditing
+    }
     .onSubmit {
       viewModel.loadUrl()
     }
@@ -82,11 +85,12 @@ struct SecureBrowserView: View {
         }
       }
       .pickerStyle(.menu)
+      .disabled(viewModel.isVPNOn)
       .padding(.trailing, 16)
 
       Toggle("VPN", isOn: $viewModel.isVPNOn)
         .frame(width: 92)
-        .onChange(of: viewModel.isVPNOn) { _, _ in
+        .onChange(of: viewModel.isVPNOn) { _ in
           togglePrivacy()
         }
     }

@@ -5,19 +5,17 @@
 //  Created by Mohammed Rokon Uddin on 10/12/24.
 //
 
-import Observation
 import SwiftUI
 import WebKit
 
-@Observable
-final class SecureBrowserViewModel {
-  var isVPNOn = false
-  var privacyLevel: PrivacyLevel = .medium
-  var canGoBack = false
-  var canGoForward = false
+final class SecureBrowserViewModel: ObservableObject {
+  @Published var isVPNOn = false
+  @Published var privacyLevel: PrivacyLevel = .medium
+  @Published var canGoBack = false
+  @Published var canGoForward = false
+  @Published var urlString = Constants.defaultURL
   var webView: WKWebView
-  var urlString = Constants.defaultURL
-  @ObservationIgnored private var proxyManager = ProxyManager()
+  private var proxyManager = ProxyManager()
 
   init() {
     self.webView = WKWebView(frame: .zero)
@@ -32,17 +30,27 @@ final class SecureBrowserViewModel {
   }
 
   func loadUrl() {
-    guard let url = URL(string: urlString) else {
+    guard let url = URL(string: urlWithHTTP) else {
       return
     }
     webView.load(URLRequest(url: url))
   }
-  
+
   func enableVPN() {
     proxyManager.enable(privacy: privacyLevel)
   }
-  
+
   func disable() {
     proxyManager.disable()
+  }
+
+  private var urlWithHTTP: String {
+    if urlString.hasPrefix("https://") {
+      return urlString
+    } else if urlString.hasPrefix("http://") {
+      return urlString.replacingOccurrences(of: "http://", with: "https://")
+    } else {
+      return "https://\(urlString)"
+    }
   }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 import WebKit
 
 struct SwiftUIWebView: UIViewRepresentable {
-  @Binding var viewModel: SecureBrowserViewModel
+  @ObservedObject var viewModel: SecureBrowserViewModel
 
   func makeUIView(context: Context) -> WKWebView {
     let webView = viewModel.webView
